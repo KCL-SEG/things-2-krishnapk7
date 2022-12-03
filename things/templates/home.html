@@ -6,6 +6,13 @@
   <h1>
     Things
   </h1>
-  <p>Some stuff about things goes here.</p>
+  <p>      
+    <form action="{% url 'home' %}" method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        {{field}}
+      {% endfor %}
+    </form>
+  </p>
 </body>
 </html>
